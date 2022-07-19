@@ -1,0 +1,6 @@
+framework module CarouselLayout {
+  umbrella header "CarouselLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

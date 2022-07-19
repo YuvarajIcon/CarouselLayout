@@ -1,0 +1,27 @@
+PODS:
+  - CarouselLayout (0.1.0)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+
+DEPENDENCIES:
+  - CarouselLayout (from `../`)
+  - FBSnapshotTestCase (~> 2.1.4)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  CarouselLayout:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CarouselLayout: 8e7e50d1cf2cfb72b318f9ca372a998c6e3be339
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+
+PODFILE CHECKSUM: ba8b9a34372965fce4159d90acee0eac99f0a56b
+
+COCOAPODS: 1.11.3

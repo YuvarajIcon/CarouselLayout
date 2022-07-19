@@ -1,0 +1,6 @@
+framework module Pods_CarouselLayout_Example {
+  umbrella header "Pods-CarouselLayout_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
