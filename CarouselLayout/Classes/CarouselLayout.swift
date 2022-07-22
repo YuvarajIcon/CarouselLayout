@@ -33,10 +33,14 @@ open class CarouselLayout: UICollectionViewCompositionalLayout {
     fileprivate func setupCollectionView() {
         guard let collectionView = self.collectionView else { return }
         collectionView.decelerationRate = UIScrollViewDecelerationRateFast
+        let attributes = self.layoutAttributesForElements(in: collectionView.bounds)
+        let cellSize = attributes?.first?.size ?? .zero
         if scrollDirection == .horizontal {
-            collectionView.contentInset = .init(top: 0, left: collectionView.bounds.width / 2, bottom: 0, right: collectionView.bounds.width / 2)
+            let offset = (collectionView.bounds.width) / 2 - (cellSize.width / 2)
+            collectionView.contentInset = .init(top: 0, left: offset, bottom: 0, right: offset)
         } else {
-            collectionView.contentInset = .init(top: collectionView.bounds.height / 2, left: 0, bottom: collectionView.bounds.height / 2, right: 0)
+            let offset = (collectionView.bounds.height) / 2 - (cellSize.height / 2)
+            collectionView.contentInset = .init(top: offset, left: 0, bottom: offset, right: 0)
         }
     }
     

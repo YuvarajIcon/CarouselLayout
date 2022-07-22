@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CarouselLayout'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A collection view layout that emulates a Carousel.'
 
 # This description is used to generate tags and improve search results.
