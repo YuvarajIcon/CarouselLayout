@@ -98,11 +98,17 @@ open class CarouselLayout: UICollectionViewCompositionalLayout {
         
         var targetContentOffset: CGPoint
         if isHorizontal {
-            let closest = layoutAttributes.sorted { abs($0.center.x - proposedContentOffsetCenterOrigin) < abs($1.center.x - proposedContentOffsetCenterOrigin) }.first!
+            let closest = layoutAttributes.sorted { abs($0.center.x - proposedContentOffsetCenterOrigin) < abs($1.center.x - proposedContentOffsetCenterOrigin) }.first
+            guard let closest = closest else {
+                return super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
+            }
             targetContentOffset = CGPoint(x: floor(closest.center.x - midSide), y: proposedContentOffset.y)
         }
         else {
-            let closest = layoutAttributes.sorted { abs($0.center.y - proposedContentOffsetCenterOrigin) < abs($1.center.y - proposedContentOffsetCenterOrigin) }.first!
+            let closest = layoutAttributes.sorted { abs($0.center.y - proposedContentOffsetCenterOrigin) < abs($1.center.y - proposedContentOffsetCenterOrigin) }.first
+            guard let closest = closest else {
+                return super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
+            }
             targetContentOffset = CGPoint(x: proposedContentOffset.x, y: floor(closest.center.y - midSide))
         }
         
